@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">
+            <img src="banderas/calculadora-logo.png" alt="C4LCUL4D0R4">
+        </a>
+        <a href="#invitar">
+            <i class="fa fa-coffee" aria-hidden="true"></i> Invitar Café</a>
+        <a href="#contact">
+            <i class="fa fa-user" aria-hidden="true"></i> Créditos</a>
+        <a href="#about">
+            <button id="mx" class="banderas"><img src="banderas/mexico.png"></button>
+            <input type="range" min="0" max="1" value="0" class="slider" id="myRange" disabled>
+            <button id="usa" class="banderas"><img src="banderas/estados-unidos.png"></button>
+        </a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="columns is-vcentered editsize">
+        <div class="column is-8 editpercente">
+            <div id="appBg" class="darkmode-ignore">
+                <form name="calculator">
+                    <input type="textfield" name="ans" value="" autocomplete="off" readonly>
+                    <div class="digitals">
+                        <input type="button" value="7" onclick="document.calculator.ans.value+='7'" class="gray" id="siete">
+                        <input type="button" value="8" onclick="document.calculator.ans.value+='8'" class="gray" id="ocho">
+                        <input type="button" value="9" onclick="document.calculator.ans.value+='9'" class="gray" id="nueve">
+                        <input type="button" value="+" onclick="document.calculator.ans.value+='+'" class="orange" id="sumar">
+                        <input type="button" value="4" onclick="document.calculator.ans.value+='4'" class="gray" id="cuatro">
+                        <input type="button" value="5" onclick="document.calculator.ans.value+='5'" class="gray" id="cinco">
+                        <input type="button" value="6" onclick="document.calculator.ans.value+='6'" class="gray" id="seis">
+                        <input type="button" value="-" onclick="document.calculator.ans.value+='-'" class="orange" id="restar">
+                        <input type="button" value="1" onclick="document.calculator.ans.value+='1'" class="gray" id="uno">
+                        <input type="button" value="2" onclick="document.calculator.ans.value+='2'" class="gray" id="dos">
+                        <input type="button" value="3" onclick="document.calculator.ans.value+='3'" class="gray" id="tres">
+                        <input type="button" value="x" onclick="document.calculator.ans.value+='*'" class="orange" id="multiplicar">
+                        <input type="button" value="0" onclick="document.calculator.ans.value+='0'" class="gray" id="cero">
+                        <input type="reset" value="C" class="options" id="clear">
+                        <input type="button" value="="
+                            onclick="document.calculator.ans.value=eval(document.calculator.ans.value)" class="options" id="igual">
+                        <input type="button" value="/" onclick="document.calculator.ans.value+='/'" class="orange" id="dividir">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="column historial">
+            <h1 class="title is-1 is-spaced">
+                <center>Historial</center>
+            </h1>
+            <p class="contenido">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia repudiandae magni
+                aspernatur doloribus, fugit molestias saepe! Saepe esse voluptatum veritatis aliquid, culpa iste a, modi
+                odio non dolorum officia ducimus?</p>
+        </div>
+    </div>
+    <div class="footer">
+        <!--Footer-->
+    </div>
+    <script src="calculadora.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+            const options = {
+                top: '32px', // default: '32px'
+                right: '32px', // default: '32px'
+                left: 'unset', // default: 'unset'
+                time: '0.5s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: '#fff',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: false, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</body>
+
+</html>
